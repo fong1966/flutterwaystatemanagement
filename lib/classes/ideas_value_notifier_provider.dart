@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'ideas_value_notifier.dart';
 
 class IdeasValueNotifierProvider extends InheritedWidget {
-  final IdeasValueNotifier ideasValueNotifier;
+  final IdeasValueNotifier? ideasValueNotifier;
 
   const IdeasValueNotifierProvider({
     Key? key,
-    required this.ideasValueNotifier,
+    this.ideasValueNotifier,
     required Widget child,
   }) : super(key: key, child: child);
 

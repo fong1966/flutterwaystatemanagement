@@ -14,7 +14,7 @@ class ValueNotifierPage extends StatefulWidget {
 
 class _ValueNotifierPageState extends State<ValueNotifierPage> {
   late IdeasValueNotifier _ideasValueNotifier;
-  late Log _log;
+  Log? _log;
 
   @override
   void initState() {
@@ -64,7 +64,7 @@ class _ValueNotifierPageState extends State<ValueNotifierPage> {
             child: Row(
               children: <Widget>[
                 ValueListenableBuilder(
-                  valueListenable: _ideasValueNotifier.value.numberOfIdeas,
+                  valueListenable: _ideasValueNotifier.value.numberOfIdeas!,
                   builder: (BuildContext context, int value, Widget? child) {
                     return InkWell(
                       child: Column(
@@ -100,7 +100,7 @@ class _ValueNotifierPageState extends State<ValueNotifierPage> {
                 ),
                 ValueListenableBuilder(
                   valueListenable:
-                      _ideasValueNotifier.value.numberOfPossibilities,
+                      _ideasValueNotifier.value.numberOfPossibilities!,
                   builder: (BuildContext context, int value, Widget? child) {
                     return InkWell(
                       child: Column(
@@ -150,16 +150,16 @@ class NumberOfIdeas extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Log log = LogProvider.of(context)!.log;
-    final IdeasValueNotifier ideasValueNotifier =
+    final Log? log = LogProvider.of(context)!.log;
+    final IdeasValueNotifier? ideasValueNotifier =
         IdeasValueNotifierProvider.of(context)!.ideasValueNotifier;
-    log.logHistory +=
-        '\n${IdeaType.ideas}: ${ideasValueNotifier.value.numberOfIdeas.value}';
+    log!.logHistory +=
+        '\n${IdeaType.ideas}: ${ideasValueNotifier!.value.numberOfIdeas!.value}';
     debugPrint(
-        'BUILD: ${IdeaType.ideas}: ${ideasValueNotifier.value.numberOfIdeas.value}');
+        'BUILD: ${IdeaType.ideas}: ${ideasValueNotifier.value.numberOfIdeas!.value}');
 
     return Text(
-      '${ideasValueNotifier.value.numberOfIdeas.value}',
+      '${ideasValueNotifier.value.numberOfIdeas!.value}',
       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
           fontSize: 48.0,
           fontWeight: FontWeight.bold,
@@ -175,16 +175,16 @@ class NumberOfPossibilities extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Log log = LogProvider.of(context)!.log;
-    final IdeasValueNotifier ideasValueNotifier =
+    final Log? log = LogProvider.of(context)!.log;
+    final IdeasValueNotifier? ideasValueNotifier =
         IdeasValueNotifierProvider.of(context)!.ideasValueNotifier;
-    log.logHistory +=
-        '\n${IdeaType.possibilities}: ${ideasValueNotifier.value.numberOfPossibilities.value}';
+    log!.logHistory +=
+        '\n${IdeaType.possibilities}: ${ideasValueNotifier!.value.numberOfPossibilities!.value}';
     debugPrint(
-        'BUILD: ${IdeaType.possibilities}: ${ideasValueNotifier.value.numberOfPossibilities.value}');
+        'BUILD: ${IdeaType.possibilities}: ${ideasValueNotifier.value.numberOfPossibilities!.value}');
 
     return Text(
-      '${ideasValueNotifier.value.numberOfPossibilities.value}',
+      '${ideasValueNotifier.value.numberOfPossibilities!.value}',
       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
           fontSize: 48.0,
           fontWeight: FontWeight.bold,

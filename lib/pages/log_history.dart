@@ -15,7 +15,7 @@ class LogHistory extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: ListTile(
-            title: Text(logProvider.log.logHistory),
+            title: Text(logProvider.log!.logHistory),
           ),
         ),
       ),

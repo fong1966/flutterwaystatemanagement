@@ -7,12 +7,12 @@ class Log {
 }
 
 class LogProvider extends InheritedWidget {
-  final Log log;
+  final Log? log;
   final Color? color;
 
   const LogProvider({
     Key? key,
-    required this.log,
+    this.log,
     this.color,
     required Widget child,
   }) : super(key: key, child: child);

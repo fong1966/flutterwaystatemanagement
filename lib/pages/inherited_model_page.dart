@@ -136,8 +136,8 @@ class MyNumberOfIdeas extends StatelessWidget {
   Widget build(BuildContext context) {
     final IdeasInheritedModel? ideasTypeIdea =
         IdeasInheritedModel.of(context, aspect: ideaType);
-    final Log log = LogProvider.of(context)!.log;
-    log.logHistory += '\n$ideaType: ${ideasTypeIdea!.numberOfIdeas}';
+    final Log? log = LogProvider.of(context)!.log;
+    log!.logHistory += '\n$ideaType: ${ideasTypeIdea!.numberOfIdeas}';
     debugPrint('BUILD: $ideaType: ${ideasTypeIdea.numberOfIdeas}');
 
     return Text(
@@ -160,9 +160,9 @@ class MyNumberOfPossibilities extends StatelessWidget {
   Widget build(BuildContext context) {
     final IdeasInheritedModel? ideasTypeIdea =
         IdeasInheritedModel.of(context, aspect: ideaType);
-    final Log log = LogProvider.of(context)!.log;
-    log.logHistory += '\n$ideaType: ${ideasTypeIdea!.numberOfPossibilities}';
-    debugPrint('BUILD: $ideaType: ${ideasTypeIdea.numberOfPossibilities}');
+    final Log? log = LogProvider.of(context)!.log;
+    log?.logHistory += '\n$ideaType: ${ideasTypeIdea!.numberOfPossibilities}';
+    debugPrint('BUILD: $ideaType: ${ideasTypeIdea!.numberOfPossibilities}');
 
     return Text(
       '${ideasTypeIdea.numberOfPossibilities}',
