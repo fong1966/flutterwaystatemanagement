@@ -7,10 +7,10 @@ class InheritedWidgetPage extends StatefulWidget {
   const InheritedWidgetPage({super.key});
 
   @override
-  State<InheritedWidgetPage> createState() => _InheritedWidgetPageState();
+  State<InheritedWidgetPage> createState() => InheritedWidgetPageState();
 }
 
-class _InheritedWidgetPageState extends State<InheritedWidgetPage> {
+class InheritedWidgetPageState extends State<InheritedWidgetPage> {
   int _numberOfIdeas = 0;
 
   void _increaseNumberOfIdeas() {
@@ -30,7 +30,8 @@ class _InheritedWidgetPageState extends State<InheritedWidgetPage> {
             icon: const Icon(Icons.add),
             label: const Text('Add Ideas'),
             style: ButtonStyle(
-                textStyle: MaterialStateProperty.resolveWith((states) => null)),
+              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+            ),
             onPressed: _increaseNumberOfIdeas,
           ),
         ],
@@ -90,7 +91,7 @@ class ParentWidget extends StatelessWidget {
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 fontSize: 48.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.blueGrey.shade800),
+                color: Colors.lightGreen.shade800),
           ),
         ],
       ),

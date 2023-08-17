@@ -44,7 +44,7 @@ class _InheritedWidgetTopPageState extends State<InheritedWidgetTopPage> {
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontSize: 48.0,
                           fontWeight: FontWeight.bold,
-                          color: Colors.blueGrey.shade800),
+                          color: Colors.lightGreen.shade800),
                     ),
                   ),
                 ],

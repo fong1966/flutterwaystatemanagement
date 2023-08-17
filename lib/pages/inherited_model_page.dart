@@ -27,7 +27,7 @@ class _InheritedModelPageState extends State<InheritedModelPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Inherited Model'),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.deepPurple,
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.history),
@@ -64,7 +64,7 @@ class _InheritedModelPageState extends State<InheritedModelPage> {
                             Icon(
                               Icons.lightbulb_outline,
                               size: 184.0,
-                              color: Colors.blueGrey.shade500,
+                              color: Colors.deepPurple.shade500,
                             ),
                             Positioned(
                               bottom: 84.0,
@@ -95,7 +95,7 @@ class _InheritedModelPageState extends State<InheritedModelPage> {
                             Icon(
                               Icons.notifications_none,
                               size: 184.0,
-                              color: Colors.blueGrey.shade500,
+                              color: Colors.deepPurple.shade500,
                             ),
                             Positioned(
                               bottom: 62.0,
@@ -145,7 +145,7 @@ class MyNumberOfIdeas extends StatelessWidget {
       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
           fontSize: 48.0,
           fontWeight: FontWeight.bold,
-          color: Colors.blueGrey.shade800),
+          color: Colors.deepPurple.shade800),
     );
   }
 }
@@ -169,7 +169,7 @@ class MyNumberOfPossibilities extends StatelessWidget {
       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
           fontSize: 48.0,
           fontWeight: FontWeight.bold,
-          color: Colors.blueGrey.shade800),
+          color: Colors.deepPurple.shade800),
     );
   }
 }

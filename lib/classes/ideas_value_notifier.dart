@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
 
-class IdeaCount {
-  ValueNotifier<int>? numberOfIdeas = ValueNotifier<int>(0);
-  ValueNotifier<int>? numberOfPossibilities = ValueNotifier<int>(0);
+class IdeaPossibilitiesCount {
+  ValueNotifier<int>? numberOfIdeasValueNotifier = ValueNotifier<int>(0);
+  ValueNotifier<int>? numberOfPossibilitiesValueNotifier =
+      ValueNotifier<int>(0);
 
-  IdeaCount({this.numberOfIdeas, this.numberOfPossibilities});
+  IdeaPossibilitiesCount(
+      {this.numberOfIdeasValueNotifier,
+      this.numberOfPossibilitiesValueNotifier});
 }
 
-class IdeasValueNotifier extends ValueNotifier<IdeaCount> {
-  IdeasValueNotifier({IdeaCount? value}) : super(value!);
+class IdeasPossibilitiesValueNotifier
+    extends ValueNotifier<IdeaPossibilitiesCount> {
+  IdeaPossibilitiesCount? ideaPossibilitiesCount;
+
+  IdeasPossibilitiesValueNotifier({this.ideaPossibilitiesCount})
+      : super(ideaPossibilitiesCount!);
 
   void addNumberOfIdeas(int numberOfIdeas) {
-    value.numberOfIdeas!.value += numberOfIdeas;
-    notifyListeners();
+    ideaPossibilitiesCount!.numberOfIdeasValueNotifier!.value += numberOfIdeas;
+    debugPrint('${value.numberOfIdeasValueNotifier!.value} !!!');
+    // notifyListeners();
   }
 
   void addNumberOfPossibilities(int numberOfPossibilities) {
-    value.numberOfPossibilities!.value += numberOfPossibilities;
-    debugPrint('${value.numberOfPossibilities!.value}');
-    notifyListeners();
+    ideaPossibilitiesCount!.numberOfPossibilitiesValueNotifier!.value +=
+        numberOfPossibilities;
+    debugPrint('${value.numberOfPossibilitiesValueNotifier!.value} !!!!!');
+    // notifyListeners();
   }
 }

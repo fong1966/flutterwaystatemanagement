@@ -12,7 +12,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
-  final List<dynamic> _listPages = [];
+  final List<Widget> _listPages = [];
   late Widget _currentPage;
 
   @override
@@ -35,7 +35,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   Color _selectedColor(int index) {
     if (index == 0) return Colors.lightGreen;
-    if (index == 1) return Colors.blueGrey;
+    if (index == 1) return Colors.deepPurple;
     if (index == 2) return Colors.orange;
     return Colors.lightGreen;
   }

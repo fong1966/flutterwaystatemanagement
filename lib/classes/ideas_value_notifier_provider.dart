@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'ideas_value_notifier.dart';
 
 class IdeasValueNotifierProvider extends InheritedWidget {
-  final IdeasValueNotifier? ideasValueNotifier;
+  final IdeasPossibilitiesValueNotifier? ideasPossibilitiesValueNotifier;
 
   const IdeasValueNotifierProvider({
-    Key? key,
-    this.ideasValueNotifier,
+    super.key,
+    this.ideasPossibilitiesValueNotifier,
     required Widget child,
-  }) : super(key: key, child: child);
+  }) : super(child: child);
 
   static IdeasValueNotifierProvider? of(BuildContext context) {
     return context
@@ -17,6 +17,13 @@ class IdeasValueNotifierProvider extends InheritedWidget {
 
   @override
   bool updateShouldNotify(IdeasValueNotifierProvider oldWidget) {
-    return ideasValueNotifier != oldWidget.ideasValueNotifier;
+    return ideasPossibilitiesValueNotifier!
+                .ideaPossibilitiesCount!.numberOfIdeasValueNotifier !=
+            oldWidget.ideasPossibilitiesValueNotifier!.ideaPossibilitiesCount!
+                .numberOfIdeasValueNotifier ||
+        ideasPossibilitiesValueNotifier!
+                .ideaPossibilitiesCount!.numberOfPossibilitiesValueNotifier !=
+            oldWidget.ideasPossibilitiesValueNotifier!.ideaPossibilitiesCount!
+                .numberOfPossibilitiesValueNotifier;
   }
 }
